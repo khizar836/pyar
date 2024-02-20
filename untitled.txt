@@ -1,0 +1,29 @@
+print(47*'\033[1;35;40m-')
+sp("\033[1m\033[36m[?] Enter Notepad File Name\n")
+print(47*'\033[1;35;40m-')
+np = str(input('\033[1;37;1m[?] Enter File Name : '))
+f = open(np, 'r')
+lines = f.readlines()
+f.close()
+print("\033[1;33;40m", end = "")
+print(47*'\033[1;35;40m-')
+sp("\033[1m\033[36m[?] Enter The Time Delay In Seconds\n")
+print(47*'\033[1;35;40m-')
+t = int(input('\033[1;37;1m[?] Enter Time : '))
+
+os.system('clear')
+print(logo)
+
+count = 0
+while True:
+    for line in lines:
+        if len(line) > 3:
+            if count != 0:
+                sleep(t)
+            findtextchat(curl)
+            sendtextconvo(line)
+            count += 1
+            if count % 10 == 0:
+                sleep(1)
+                clear()
+                print("\033[0;37;41m\n")
